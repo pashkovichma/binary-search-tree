@@ -68,7 +68,7 @@ BinarySearchTree.prototype.delete = function (key) {
 	return this;
 }
 
-BinarySearchTree.prototype.removeNote = function(node, key) {
+BinarySearchTree.prototype.removeNode = function(node, key) {
 	if (node == null){ 
         return null; 
     } 
