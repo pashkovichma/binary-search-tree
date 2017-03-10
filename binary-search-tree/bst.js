@@ -64,17 +64,18 @@ BinarySearchTree.prototype.search = function (key) {
 };
 
 BinarySearchTree.prototype.delete = function (key) {
-	this._root = this.removeNote(this._root, key)
+	this._root = this.removeNote(this._root, key);
+	return this;
 }
 
 BinarySearchTree.prototype.removeNote = function(node, key) {
 	if (node == null){ 
-              return null; 
-          } 
-          if (key == node.key) { 
-                if (node._left == null && node._right == null){ 
-                return null; 
-              } 
+        return null; 
+    } 
+        if (key == node.key) { 
+            if (node._left == null && node._right == null){ 
+            	return null; 
+            } 
               
               if (node._left == null){ 
                   return node._right; 
@@ -92,7 +93,9 @@ BinarySearchTree.prototype.removeNote = function(node, key) {
           } else if (key < node.key) { 
               node._left = this.removeNode(node._left, key); 
               return node; 
-          } else { 
+          } 
+
+          else { 
               node._right = this.removeNode(node._right, key); 
               return node; 
           } 
@@ -114,3 +117,5 @@ module.exports = {
   BinarySearchTree,
   student: 'pashkovichma'
 };
+
+
